@@ -20,11 +20,10 @@
     'version': '13.0.0.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','sale'],
+    'depends': ['sale'],
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
         'views/patient.xml',
         'views/appointment.xml',
         'views/templates.xml',

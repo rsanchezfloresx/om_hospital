@@ -28,22 +28,20 @@ class HospitalPatient(models.Model):
                 rec.age_group = 'minor'
             else:
                 rec.age_group = 'major'
-
-
-    def open_patient_appointments(self):
+    def open_patient_appoint(self):
+        self.ensure_one()
         return {
-            'name': _('Appointments'),
-            'domain': [('patient_id', '=', self.id)],
-            'view_type': 'form',
-            'res_model': 'hospital.appointment',
-            'view_id': False,
-            'view_mode': 'tree,form',
             'type': 'ir.actions.act_window',
+            'name': 'Appointments',
+            'view_mode': 'form',
+            'res_model': 'hospital.appointment',
+            'domain': [('patient_id', '=', self.id)],
+            'context': "{'create': False}"
         }
-    def get_appointment_count(self):
+    def get_appoint_count(self):
         count = self.env['hospital.appointment'].search_count([
             ('patient_id', '=', self.id)])
-        self.appointment_count = count
+        self.appoint_count = count
 
     patient_name = fields.Char(string="Name", required=True,
                        help="Name of the patient")
@@ -52,8 +50,8 @@ class HospitalPatient(models.Model):
     notes = fields.Text(string="Notes")
     image = fields.Binary(string="Image")
     name = fields.Char(string="Test")
-    appointment_count = fields.Integer(string='Appointment',
-                                       compute='get_appointment_count')
+    appoint_count = fields.Integer(string='Appointment',
+                                       compute='get_appoint_count')
     name_seq = fields.Char(string='Order Reference',
                            required=True,
                            copy=False,

@@ -34,14 +34,10 @@
         <field name="arch" type="xml">
             <form string="Patients">
                 <sheet>
-                    <div class="oe_button_box" name="button_box">
-                        <button name="open_patient_appointments" class="oe_stat_button"
+                    <div name="button_box" position="inside">
+                        <button name="open_patient_appoint" class="oe_stat_button"
                                 type="object" icon="fa-calendar">
-                            <field string="Appointments" name="appointment_count" widget="statinfo"/>
-                        </button>
-                        <button name="%(open_patient_appointments)d" class="oe_stat_button"
-                                type="action" icon="fa-usd">
-                            <field string="Appointments" name="appointment_count" widget="statinfo"/>
+                            <field string="Appointments" name="appoint_count" widget="statinfo"/>
                         </button>
                     </div>
                     <div class= "oe_title">
