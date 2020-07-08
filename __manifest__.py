@@ -24,11 +24,23 @@
 
     # always loaded
     'data': [
+        'security/ir.model.access.csv',
+        'security/security.xml',
+        'data/sequence.xml',
+        'data/cron.xml',
+        'wizards/create_appointment.xml',
         'views/patient.xml',
         'views/appointment.xml',
+        'views/doctor.xml',
         'views/templates.xml',
-        'security/ir.model.access.csv',
-        'data/sequence.xml'
+        'views/lab.xml',
+        'views/sale_order.xml',
+        'views/settings.xml',
+        'reports/report.xml',
+        'reports/patient_card.xml',
+        'reports/sale_report_inherit.xml',
+        'reports/appointment.xml',
+        'data/mail_template.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
