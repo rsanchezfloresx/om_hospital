@@ -20,7 +20,7 @@
     'version': '13.0.0.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['sale'],
+    'depends': ['sale', 'board'],
 
     # always loaded
     'data': [
@@ -36,6 +36,7 @@
         'views/lab.xml',
         'views/sale_order.xml',
         'views/settings.xml',
+        'views/dashboard.xml',
         'reports/report.xml',
         'reports/patient_card.xml',
         'reports/sale_report_inherit.xml',

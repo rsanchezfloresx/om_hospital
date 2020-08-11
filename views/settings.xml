@@ -26,7 +26,6 @@
                             </div>
                         </div>
                     </group>
-                    <!-->
                     <group>
                         <div class="row mt16 o_settings_container">
                             <div class="o_setting_left_pane">
@@ -35,7 +34,6 @@
                             </div>
                         </div>
                     </group>
-                    -->
                 </div>
             </xpath>
         </field>

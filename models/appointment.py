@@ -84,6 +84,7 @@ class HospitalAppointment(models.Model):
                        index=True, default=lambda self: _('New'))
     patient_id = fields.Many2one('hospital.patient', string='Patient',
                                  required=True)
+    doctor_id = fields.Many2one('hospital.doctor', string='Doctor')
     patient_age = fields.Integer('Age', related='patient_id.patient_age')
     notes = fields.Text(string="Registration Note", default=_get_default_note)
     appointment_date = fields.Date(string='Date')
@@ -96,7 +97,7 @@ class HospitalAppointment(models.Model):
     partner_id = fields.Many2one('res.partner', string="Customer")
     order_id = fields.Many2one('sale.order', string="Sale Order")
     product_id = fields.Many2one('product.template', string="Product Template")
-
+    amount = fields.Float(string="Total Amount")
 
     state = fields.Selection([
             ('draft', 'Draft'),

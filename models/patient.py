@@ -117,7 +117,9 @@ class HospitalPatient(models.Model):
     patient_name = fields.Char(string="Name", required=True,
                        help="Name of the patient")
     patient_age = description = fields.Integer(string="Age",
-                                               track_visibility="always")
+                                               track_visibility="always",
+                                               group_operator=False)
+    patient_age2 = fields.Float(string="Age2")
     notes = fields.Text(string="Registration note")
     image = fields.Binary(string="Image")
     name = fields.Char(string="Test")
